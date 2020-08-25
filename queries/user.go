@@ -17,17 +17,17 @@ var UserField = &graphql.Field{
 	Args: graphql.FieldConfigArgument{
 		"user_id": &graphql.ArgumentConfig{
 			Description: "The ID of the user you want to retrieve",
-			Type:        graphql.Int,
+			Type:        graphql.NewNonNull(graphql.Int),
 		},
 	},
 	Resolve: func(p graphql.ResolveParams) (interface{}, error) {
 
-		return fetchUsers(), nil
+		return fetchSingleUser(p.Args["user_id"].(int)), nil
 	},
 }
 
 // Find a single user for the given userID
-func fetchUser(userID int) models.User {
+func fetchSingleUser(userID int) models.User {
 
 	response, err := http.Get("https://jsonplaceholder.typicode.com/users/" + strconv.Itoa(userID))
 
