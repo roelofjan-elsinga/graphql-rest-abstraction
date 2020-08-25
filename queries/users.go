@@ -15,7 +15,7 @@ var companyField = graphql.NewObject(graphql.ObjectConfig{
 	Description: "A company",
 	Fields: graphql.Fields{
 		"name": &graphql.Field{
-			Type:        graphql.Int,
+			Type:        graphql.String,
 			Description: "The name of the company",
 			Resolve: func(p graphql.ResolveParams) (interface{}, error) {
 				if company, ok := p.Source.(models.Company); ok {
@@ -52,7 +52,7 @@ var geoField = graphql.NewObject(graphql.ObjectConfig{
 	Description: "This is an geolocation object",
 	Fields: graphql.Fields{
 		"latitude": &graphql.Field{
-			Type:        graphql.Int,
+			Type:        graphql.String,
 			Description: "The latitude of the geolocation",
 			Resolve: func(p graphql.ResolveParams) (interface{}, error) {
 				if geo, ok := p.Source.(models.Geo); ok {
