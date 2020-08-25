@@ -1,9 +1,9 @@
 # GraphQL abstraction for REST API Endpoints
 
-This GraphQL server serves as the API Gateway to bring several REST Endpoints together.
+This GraphQL server serves as the API Gateway to bring several REST Endpoints together. This repository is an example for my blog post: ["GraphQL: Abstracting existing API endpoints in a single place"](https://roelofjanelsinga.com/articles/graphql-abstracting-existing-api-endpoints-in-single-place).
 
 #### Features
-- Fetch data from x number of services, serve it in one place
+- Fetch data from a REST API ([https://jsonplaceholder.typicode.com](https://jsonplaceholder.typicode.com/)) and make this available as a GraphQL resource.
 
 ## How to launch the server for development
 To develop this GraphQL server further, follow these steps:
